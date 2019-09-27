@@ -1,47 +1,77 @@
 import React, { Component } from 'react';
 const styles = {
-    button: { margin: "10px" }
+    button: { margin: "10px" },
+    counterMain:{ border: "1px solid black", height: "400px", width: "400px", alignContent: "center" }
 }
 class Counter extends Component {
     state = {
-        start: 0
+        counter: 0
     }
-    handleIncreaseBy10 = () => {
-        // const { start } = this.state;
-        // console.log('handleUpdatCounter is called');
+    handleUpdateCounterBy = (count) => {
+        // console.log(count);
+        // console.log('handleUpdatCounter is called', e.target.value);
         this.setState((preState) => {
-            return { start: preState.start + 10 }
+            return { counter: preState.counter + count }
         })
     }
-    handleDecreaseBy10 = () => {
-        const { start } = this.state;
-        // console.log('handleUpdatCounter is called');
-        this.setState({
-            start: start - 10
-        })
-    }
+   
     handleReset = () => {
         this.setState({
-            start: 0
+            counter: 0
         })
     }
     render() {
-        const { start } = this.state;
-        return (<div style={{ border: "1px solid black", height: "400px", width: "400px", alignContent: "center" }}>
+        const { counter } = this.state;
+        return (
+          <div style={styles.counterMain}>
             Counter details
-                <div >
-                <button onClick={this.handleIncreaseBy10} style={styles.button}>
-                    Increase by 10</button>
+            <div>
+              <span>
+              <button
+                  onClick={e => this.handleUpdateCounterBy(100)}
+                  style={styles.button}
+                >
+                  Increase by 100
+                </button>
+                <button
+                  onClick={e => this.handleUpdateCounterBy(10)}
+                  style={styles.button}
+                >
+                  Increase by 10
+                </button>
+                <button
+                  onClick={e => this.handleUpdateCounterBy(1)}
+                  style={styles.button}
+                >
+                  Increase by 1
+                </button>
+              </span>
+              <span>
+                <button
+                  onClick={e => this.handleUpdateCounterBy(-100)}
+                  style={styles.button}
+                >
+                  Decrease by 100
+                </button>
+                <button
+                  onClick={e => this.handleUpdateCounterBy(-10)}
+                  style={styles.button}
+                >
+                  Decrease by 10
+                </button>
+                <button
+                  onClick={e => this.handleUpdateCounterBy(-1)}
+                  style={styles.button}
+                >
+                  Decrease by 1
+                </button>
+              </span>
 
-                <button onClick={this.handleDecreaseBy10} style={styles.button}>
-                    Decrease by 10</button>
-
-                <h1>
-                    {start}
-                </h1>
-                <button onClick={this.handleReset}>Reset</button>
+              <h1>{counter}</h1>
+              <button onClick={this.handleReset}>Reset</button>
             </div>
-        </div>);
+          </div>
+        );
     }
 }
 
