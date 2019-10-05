@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Idea
+Idea behind this application is to build a basic app to display a counter. 
+It's value will change(increase/decrease) onevent using single function. Reset counter with 0.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
