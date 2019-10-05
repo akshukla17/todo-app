@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 // import logo from "./logo.svg";
-import FirstComponent, { SecondComponent } from './components/learning-examples/FirstComponent';
+// import FirstComponent, { SecondComponent } from './components/learning-examples/FirstComponent';
 import Counter from './components/counter/Counter';
 import "./App.css";
 
@@ -11,12 +11,6 @@ function App() {
       <Counter />
     </div>
   );
-}
-
-
-
-const ThirdComponent = () => {
-  return (<div>Third Component</div>)
 }
 
 export default App;
